@@ -1,7 +1,7 @@
 package com.crazyang.mapper;
 
 import com.crazyang.Java2019ApplicationTests;
-import com.crazyang.entity.TestEntity;
+import com.crazyang.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ import java.util.List;
 public class TestMapperTest  extends Java2019ApplicationTests{
 
     @Autowired
-    private TestMapper testMapper;
+    private UserMapper userMapper;
 
     @Test
     public void test(){
         System.out.println(("----- selectAll method test ------"));
-        List<TestEntity> testEntityList = testMapper.selectList(null);
+        List<User> testEntityList = userMapper.selectList(null);
         Assert.assertEquals(5, testEntityList.size());
         testEntityList.forEach(System.out::println);
     }

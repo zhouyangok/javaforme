@@ -11,14 +11,14 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class AjaxResponse {
+public class AjaxResponse<T> {
 
 
     private Integer code;
     private String msg;
-    private Object data;
+    private T data;
 
-    public AjaxResponse(Object data) {
+    public AjaxResponse(T data) {
         this.code = 200;
         this.msg = "成功";
         this.data = data;
