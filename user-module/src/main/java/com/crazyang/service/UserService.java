@@ -5,6 +5,7 @@ import com.crazyang.entity.User;
 import com.crazyang.mapper.UserMapper;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -23,6 +24,13 @@ public class UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    public void register(String username,String password){
+
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        bCryptPasswordEncoder.encode(password);
+
+    }
 
     /**
      * 插入用户数据
@@ -71,12 +79,15 @@ public class UserService {
 
     }
 
+    /**
+     * 根据用户name获取用户
+     *
+     * @param name
+     * @return
+     */
     public AjaxResponse getUserByName(String name){
-//        Wrapper wrapper = Condition
-//        wrapper.eq("email", "123@qq.com");
-//        map.put("name",name);
-//        userMapper.selectOne(map);
-        return null;
+        User user = userMapper.getUserByName(name);
+        return AjaxResponse.success(user);
     }
 
     /**

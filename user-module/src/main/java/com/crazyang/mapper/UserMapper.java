@@ -1,5 +1,6 @@
 package com.crazyang.mapper;
 
+import com.crazyang.entity.SelfUserDetails;
 import com.crazyang.entity.User;
 import org.apache.ibatis.annotations.*;
 
@@ -28,6 +29,9 @@ public interface UserMapper {
      */
     @Select("SELECT * FROM user where name=#{name} and status=1")
     User getUserByName(@Param("name") String name);
+
+    //通过username查询用户
+    SelfUserDetails getUser(@Param("username") String username);
 
     @Select("SELECT * FROM user where id=#{id} and status=1")
     User selectById(@Param("id") Integer id);

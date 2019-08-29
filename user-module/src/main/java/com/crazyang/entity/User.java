@@ -16,7 +16,7 @@ import java.util.Date;
 public class User {
     private Integer id;
     @NotNull(message="用户名不能为空")
-    private String name;
+    private String username;
     private String password;
     private Integer age;
     private String address;

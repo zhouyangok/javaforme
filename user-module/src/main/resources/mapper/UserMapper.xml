@@ -4,47 +4,9 @@
 
 
 
-    <!--<select id="mySelectPage" resultType="com.crazyang.entity.User">
-        select *
-        from user
-        where (age = #{pg.selectInt} and name = #{pg.selectStr})
-        or (age = #{ps.yihao} and name = #{ps.erhao})
-    </select>
-
-    <select id="mySelectPageMap" resultType="com.crazyang.entity.User">
-        select * from user
-        <where>
-            <if test="map.name!=null and map.name!=''">
-                name like #{map.name}
-            </if>
-        </where>
-    </select>
-
-    <select id="mySelectMap" resultType="com.crazyang.entity.User">
-        select * from user
-        <where>
-            <if test="name!=null and name!=''">
-                name like #{name}
-            </if>
-        </where>
-    </select>
-
-    <select id="myPageSelect" resultType="com.crazyang.entity.User">
-        select * from user
-        <where>
-            <if test="name!=null and name!=''">
-                name like '%'||#{name}||'%'
-            </if>
-        </where>
-    </select>-->
-
-    <select id="iPageSelect" resultType="com.crazyang.entity.User">
-        select * from user
-       <!-- <where>
-            <if test="name!=null and name!=''">
-                name like #{name}
-            </if>
-        </where>-->
+    <select id="getUser" parameterType="String" resultType="com.crazyang.entity.SelfUserDetails">
+        SELECT * FROM user
+        where username = #{username}
     </select>
 
 </mapper>

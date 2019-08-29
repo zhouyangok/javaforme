@@ -6,6 +6,7 @@ import com.crazyang.base.exception.MyException;
 import com.crazyang.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -25,19 +26,10 @@ public class TestServiceTest extends Java2019ApplicationTests {
 
     @Test
     public void save() throws Exception {
-        User entity = new User();
-//        entity.setId(4);
-
-        for(int i =5;i<10000;i++){
-            entity.setId(i);
-            entity.setAge(25);
-            entity.setName("mike"+i);
-            entity.setAddress("beijing");
-            Date date = new Date();
-            entity.setCreateDate(date);
-            AjaxResponse ar = testService.save(entity);
-            System.out.println(ar.toString());
-        }
+        String password = "123456";
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+       String ss =  bCryptPasswordEncoder.encode(password);
+        System.out.println(ss);
 
     }
 
@@ -45,7 +37,7 @@ public class TestServiceTest extends Java2019ApplicationTests {
     public void update() throws Exception {
         User entity = new User();
         entity.setId(4);
-        entity.setName("mike");
+        entity.setUsername("mike");
         Date date = new Date();
         entity.setUpdateDate(date);
         AjaxResponse ar = testService.update(entity);

@@ -1,10 +1,14 @@
 package com.crazyang.controller;
 
 import com.crazyang.base.AjaxResponse;
+import com.crazyang.base.ResultEnum;
+import com.crazyang.base.ResultVO;
 import com.crazyang.entity.User;
 import com.crazyang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @ClassName UserController
@@ -18,6 +22,19 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    /**
+     * 简单注册功能
+     * @param username
+     * @param password
+     * @return
+     */
+    @PostMapping("/register")
+    public Map<String, Object> register(String username, String password){
+        userService.register(username,password);
+        return ResultVO.result(ResultEnum.SUCCESS,true);
+    }
+
 
     /**
      * 保存用户
