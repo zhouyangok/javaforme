@@ -12,12 +12,11 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * @ClassName JwtTokenUtil
- * @Description: jwt生成token
+ * @ClassName JDBCtest
  * @Author zhouyang
- * @Date 2019/8/29 下午10:08.
+ * @Date 2019/8/26 下午9:17.
+ * @description: jwt生成token
  */
-
 public class JwtTokenUtil {
 
     // 寻找证书文件
@@ -40,12 +39,11 @@ public class JwtTokenUtil {
      * 生成token
      * @param subject （主体信息）
      * @param expirationSeconds 过期时间（秒）
-     * @param claims 自定义身份信息
      * @return
      */
-    public static String generateToken(String subject, int expirationSeconds, Map<String,Object> claims) {
+    public static String generateToken(String subject, int expirationSeconds) {
         return Jwts.builder()
-                .setClaims(claims)
+                .setClaims(null)
                 .setSubject(subject)
                 .setExpiration(new Date(System.currentTimeMillis() + expirationSeconds * 1000))
 //                .signWith(SignatureAlgorithm.HS512, salt) // 不使用公钥私钥
@@ -93,5 +91,4 @@ public class JwtTokenUtil {
                 .parseClaimsJws(token)
                 .getBody();
     }
-
 }

@@ -36,6 +36,6 @@ public class CustomUserService implements UserDetailsService {
             user.setAuthorities(authoritiesSet);
 
         }
-        return null;
+        return user;
     }
 }

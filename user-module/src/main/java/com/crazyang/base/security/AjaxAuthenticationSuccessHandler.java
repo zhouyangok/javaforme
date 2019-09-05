@@ -8,6 +8,7 @@ import com.crazyang.entity.SelfUserDetails;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +27,7 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         SelfUserDetails userDetails = (SelfUserDetails) authentication.getPrincipal();
 
-        String jwtToken = JwtTokenUtil.generateToken(userDetails.getUsername(), 1500,null);
+        String jwtToken = JwtTokenUtil.generateToken(userDetails.getUsername(), 1500);
 
         httpServletResponse.getWriter().write(JSON.toJSONString(ResultVO.result(ResultEnum.USER_LOGIN_SUCCESS,jwtToken,true)));
     }

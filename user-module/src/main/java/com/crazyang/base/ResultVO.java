@@ -1,5 +1,7 @@
 package com.crazyang.base;
 
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +12,7 @@ import java.util.Map;
  * @Author zhouyang
  * @Date 2019/8/29 下午9:56.
  */
-
+@ResponseBody
 public class ResultVO implements Serializable {
     private static final long serialVersionUID = 1725159680599612404L;
 
