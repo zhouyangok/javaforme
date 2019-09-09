@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.crazyang</groupId>
-	<artifactId>product-order</artifactId>
+	<artifactId>base-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>product-order</name>
+	<name>base-common</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -19,12 +19,6 @@
 	</properties>
 
 	<dependencies>
-		<!--引入common模块-->
-		<dependency>
-			<groupId>com.crazyang</groupId>
-			<artifactId>base-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

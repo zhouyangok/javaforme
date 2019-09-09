@@ -1,4 +1,4 @@
-package com.crazyang.base;
+package com.crazyang.common.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,7 +29,7 @@ public class AjaxResponse<T> {
         this.msg = "成功";
     }
 
-    public AjaxResponse(Integer code,String msg) {
+    public AjaxResponse(Integer code, String msg) {
         this.code = 200;
         this.msg = "成功";
     }

@@ -35,6 +35,7 @@ public class RbacAuthorityService {
             urls.add("/demo/**");//application.yml里设置了项目路径，百度一下我就不贴了
             Set set2 = new HashSet();
             Set set3 = new HashSet();
+            urls.add("/**");
 
             AntPathMatcher antPathMatcher = new AntPathMatcher();
 

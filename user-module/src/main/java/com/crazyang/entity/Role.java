@@ -6,19 +6,18 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * @ClassName User
+ * @ClassName Role
  * @Description: TODO
  * @Author zhouyang
- * @Date 2019/8/25 下午8:00.
+ * @Date 2019/9/7 下午3:53.
  */
 @Data
-public class User {
+public class Role {
+
     private Integer id;
     @NotNull(message = "用户名不能为空")
-    private String username;
-    private String password;
-    private Integer age;
-    private String address;
+    private String roleName;
     private Date createDate;
     private Date updateDate;
+    private Integer status;
 }

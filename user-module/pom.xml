@@ -9,16 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.crazyang</groupId>
-    <artifactId>user</artifactId>
+    <artifactId>user-module</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user</name>
+    <name>user-module</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
