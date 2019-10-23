@@ -5,7 +5,7 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://101.132.146.171:3306/java2019?characterEncoding=utf-8&useSSl=false
+    url: jdbc:mysql://127.0.0.1:3306/crazyang?characterEncoding=utf-8&useSSl=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
   http:

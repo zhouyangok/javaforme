@@ -18,6 +18,7 @@
 		<module>../user-module</module>
 		<module>../product-order</module>
 		<module>../message</module>
+		<module>../logs</module>
 	</modules>
 
 	<properties>
